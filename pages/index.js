@@ -7,7 +7,7 @@ import FeedbackForm from "@components/FeedbackForm";
 export default function Home({ data }) {
   const[ tv, setTv ] = useState("")
   useEffect(() => {
-    setName(data)
+    setTv(data)
   }, []);
 
   return (
