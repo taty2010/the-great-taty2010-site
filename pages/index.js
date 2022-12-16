@@ -28,7 +28,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`api/joke`)
+  const res = await fetch(process.env.NETLIFY == "true" ? `${process.env.URL}/api/joke` : process.env.CONTEXT == "deploy-preview" ? `${process.env.DEPLOY_PRIME_URL}/api/joke` : 'http://localhost:8888/api/joke')
   const data = await res.json()
   // Pass data to the page via props
   return { props: { data } }
