@@ -4,7 +4,6 @@ import Footer from "@components/Footer";
 import FeedbackForm from "@components/FeedbackForm";
 
 export default function Home({ data }) {
-  console.log(data)
   return (
     <div className="container">
       <Head>
