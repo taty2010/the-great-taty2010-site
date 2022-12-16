@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import FeedbackForm from "@components/FeedbackForm";
 
 export default function Home({ data }) {
-  const[ name, setName ] = useState("")
+  const[ tv, setTv ] = useState("")
   useEffect(() => {
-    setName(data.name)
+    setName(data)
   }, []);
 
   return (
@@ -23,7 +23,7 @@ export default function Home({ data }) {
         <p className="description">
           Here's an example of a Netlify Form! When you fill this out, the
           submissions can be found in the Netlify Admin site. 
-          {name}
+          {tv?.name}
         </p>
         {/* <FeedbackForm name={data.name}/> */}
       </main>
