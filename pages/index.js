@@ -4,10 +4,10 @@ import Footer from "@components/Footer";
 import { useEffect, useState } from "react";
 import FeedbackForm from "@components/FeedbackForm";
 
-export default function Home({ data }) {
+export default function Home({ res }) {
   const[ name, setName ] = useState("")
   useEffect(() => {
-    setName(data.name)
+    setName(res.name)
   }, []);
 
   return (
@@ -35,7 +35,9 @@ export default function Home({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(process.env.CONTEXT == "production" ? `${process.env.URL}/api/joke` : process.env.CONTEXT == "deploy-preview" ? `${process.env.DEPLOY_PRIME_URL}/api/joke` : 'http://localhost:8888/api/joke')
-  const data = await res.json()
+  .then(res => res.json())
+  .catch(err => console.log(err))
+
   // Pass data to the page via props
-  return { props: { data } }
+  return { props: { res } }
 }
