@@ -8,7 +8,7 @@ export default function Home({ data }) {
   const[ tv, setTv ] = useState("")
   useEffect(() => {
     setTv(data)
-  }, []);
+  }, [data]);
 
   return (
     <div className="container">
@@ -25,7 +25,7 @@ export default function Home({ data }) {
           submissions can be found in the Netlify Admin site. 
           {tv?.name}
         </p>
-        {/* <FeedbackForm name={data.name}/> */}
+        <FeedbackForm />
       </main>
       <Footer />
     </div>

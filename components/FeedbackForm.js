@@ -1,9 +1,8 @@
 import styles from './FeedbackForm.module.css'
 
-export default function FeedbackForm({ name }) {
+export default function FeedbackForm() {
   return (
     <>
-      <p>{name}</p>
       <form
         className={styles.form}
         data-netlify="true"
