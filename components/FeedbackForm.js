@@ -1,7 +1,9 @@
 import styles from './FeedbackForm.module.css'
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ name }) {
   return (
+    <>
+      <p>{name}</p>
       <form
         className={styles.form}
         data-netlify="true"
@@ -27,5 +29,6 @@ export default function FeedbackForm() {
         <textarea id="feedback" className={styles['form-field']} wrap="soft" name="feedback" required></textarea>
         <button className={styles.button} type="submit">Submit</button>
       </form>
+    </>
   )
 }
