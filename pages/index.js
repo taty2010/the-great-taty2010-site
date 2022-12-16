@@ -16,9 +16,10 @@ export default function Home({ data }) {
         <hr />
         <p className="description">
           Here's an example of a Netlify Form! When you fill this out, the
-          submissions can be found in the Netlify Admin site.
+          submissions can be found in the Netlify Admin site. 
+          {data.name}
         </p>
-        <FeedbackForm name={data.name}/>
+        {/* <FeedbackForm name={data.name}/> */}
       </main>
       <Footer />
     </div>

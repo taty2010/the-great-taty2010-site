@@ -1,5 +1,4 @@
 // Jokes provided from the lovely folks at https://icanhazdadjoke.com
-import jokes from './jokes.json';
 import fetch from 'node-fetch';
 
 export const handler = async (event) => {
